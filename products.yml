@@ -1,0 +1,5 @@
+products:
+  -
+    url: "https://www.amazon.com/dp/B0992K775X?ie=UTF8&language=es_US&viewID=&ref_=sbl_dpx_kitchen-coffee-grinders_B09HB8P99M_1&currency=USD"
+    selector: '//span[@class="a-offscreen"]/text()'
+    name: "Test Product"
