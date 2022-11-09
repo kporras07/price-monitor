@@ -14,6 +14,8 @@ def get_parser(url):
 latestProducts = []
 products = []
 
+raiseError = False
+
 if path.exists("latestProducts.yml"):
     with open("./latestProducts.yml", 'r') as latestProductsStream:
         latestProducts = yaml.safe_load(latestProductsStream)
@@ -40,6 +42,7 @@ with open("./products.yml", 'r') as stream:
 
             if oldPrice and price != oldPrice:
                 print("Price changed from " + oldPrice + " to " + price)
+                raiseError = True
 
             product["latestPrice"] = price
     except yaml.YAMLError as exc:
@@ -50,3 +53,6 @@ with open("./latestProducts.yml", 'w') as file:
         yaml.dump(products, file)
     except yaml.YAMLError as exc:
         print(exc)
+
+if raiseError:
+    exit(1)
