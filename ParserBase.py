@@ -24,7 +24,7 @@ class ParserBase:
 
         try:
             price = dom.xpath(selector)[0]
-            return price
+            return str(price)
         except Exception as e:
             price = 'Not Available'
             return None
