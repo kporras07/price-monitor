@@ -2,11 +2,14 @@
 
 import yaml
 from ParserAmazon import ParserAmazon
+from ParserPrimaCoffee import ParserPrimaCoffee
 from os import path
 
 def get_parser(url):
     if "amazon" in url:
         return ParserAmazon()
+    if "prima-coffee.com" in url:
+        return ParserPrimaCoffee()
 
 latestProducts = []
 products = []
